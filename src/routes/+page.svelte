@@ -55,12 +55,14 @@
   function filterTodo(filterType) {
     activeType = filterType;
 
-    if(filterType === "all") {
-       return todos.set(todosStored);
+    if (filterType === "all") {
+      return todos.set(todosStored);
     }
 
     todos.update((todos) => {
-      const filteredTodos = todosStored.filter((todo) => todo.category === filterType);
+      const filteredTodos = todosStored.filter(
+        (todo) => todo.category === filterType
+      );
       return filteredTodos;
     });
   }
@@ -71,7 +73,9 @@
   }
 </script>
 
-<div class="w-full min-h-screen bg-sky-500 flex items-center justify-center">
+<div
+  class="w-full px-3 md:px-0 min-h-screen bg-sky-500 flex items-center justify-center"
+>
   <div class="bg-white w-[480px] py-3 px-3 rounded-sm">
     <div
       class="w-full flex items-center gap-x-2 border border-slate-300 pr-[6px]"
