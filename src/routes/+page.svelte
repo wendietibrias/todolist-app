@@ -45,7 +45,12 @@
 
     todos.update((todos) => {
       return todos.map((todo) =>
-        todo.id === todoId ? { ...todo, category:todo.category === "complete" ? "pending" : "complete" } : todo
+        todo.id === todoId
+          ? {
+              ...todo,
+              category: todo.category === "complete" ? "pending" : "complete",
+            }
+          : todo
       );
     });
 
@@ -53,6 +58,7 @@
   }
 
   function filterTodo(filterType) {
+    const todosStored = browser && JSON.parse(localStorage.getItem('todos'));
     activeType = filterType;
 
     if (filterType === "all") {
