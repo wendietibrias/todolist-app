@@ -45,7 +45,7 @@
 
     todos.update((todos) => {
       return todos.map((todo) =>
-        todo.id === todoId ? { ...todo, category: "complete" } : todo
+        todo.id === todoId ? { ...todo, category:todo.category === "complete" ? "pending" : "complete" } : todo
       );
     });
 
